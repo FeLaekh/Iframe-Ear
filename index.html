@@ -69,6 +69,14 @@ iframe {
     <div class="credits">
     </div>
   </main>
+<script>window.onload = function () {
+  function sendHeight() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage(height, "*");
+  }
 
+  sendHeight();
+  window.addEventListener("resize", sendHeight);
+};</script>
 </body>
 </html>
